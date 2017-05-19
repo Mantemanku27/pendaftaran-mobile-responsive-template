@@ -1,6 +1,6 @@
 $(document).ready(function () {      
             
-    function init_template(){//Class is vital to run AJAX Pages 
+    function init_template(){ // Class is vital to run AJAX Pages 
               
         $('.open-scrolling-menu').click(function(){
             $('.header-icon-1, header-icon-3, .header-icon-4').toggleClass('no-pointer-events opacity-25');
@@ -117,10 +117,10 @@ $(document).ready(function () {
             return false;
         });
         
-        //FastClick
+        // FastClick
         $(function() {FastClick.attach(document.body);});
 
-        //Preload Image
+        // Preload Image
         $(function() {
             $(".preload-image").lazyload({
                 threshold : 4000,
@@ -158,17 +158,17 @@ $(document).ready(function () {
             return false;
         });
         
-        //Portfolio Wide
+        // Portfolio Wide
         
         $('.portfolio-wide-caption a').click(function(){
            $(this).parent().parent().find('.portfolio-wide-content').slideToggle(250);
             return false;
         });
                 
-        //Detect if iOS WebApp Engaged and permit navigation without deploying Safari
+        // Detect if iOS WebApp Engaged and permit navigation without deploying Safari
         (function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")
 
-        //Detecting Mobiles//
+        // Detecting Mobiles
         var isMobile = {
             Android: function() {return navigator.userAgent.match(/Android/i);},
             BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
@@ -184,7 +184,7 @@ $(document).ready(function () {
             $('#page-content-scroll').css('right', '0px');
         }
         if(isMobile.Android()) {
-            //Status Bar Color for Android
+            // Status Bar Color for Android
             $('head').append('<meta name="theme-color" content="#000000"> />');
             $('.show-android').removeClass('disabled');
             $('.show-blackberry, .show-ios, .show-windows, .show-download').addClass('disabled');
@@ -208,10 +208,10 @@ $(document).ready(function () {
             $('#page-content-scroll, .sidebar-scroll').css('right', '0px');
         }
 
-        //Galleries
+        // Galleries
         $(".gallery a, .show-gallery").swipebox();
 
-        //Adaptive Folios
+        // Adaptive Folios
         $('.adaptive-one').click(function(){
             $('.portfolio-switch').removeClass('active-adaptive');
             $(this).addClass('active-adaptive');
@@ -234,11 +234,11 @@ $(document).ready(function () {
             return false;
         });
 
-        //Show Back To Home When Scrolling
+        // Show Back To Home When Scrolling
         $('#page-content-scroll').on('scroll', function () {
             var total_scroll_height = $('#page-content-scroll')[0].scrollHeight
             var inside_header = ($(this).scrollTop() <= 200);
-            var passed_header = ($(this).scrollTop() >= 0); //250
+            var passed_header = ($(this).scrollTop() >= 0); // 250
             var footer_reached = ($(this).scrollTop() >= (total_scroll_height - ($(window).height() +100 )));
 
             if (inside_header == true) {
@@ -251,7 +251,7 @@ $(document).ready(function () {
             }
         });
 
-        //Back to top Badge
+        // Back to top Badge
         $('.back-to-top-badge, .back-to-top').click(function (e) {
             e.preventDefault();
             $('#page-content-scroll').animate({
@@ -260,9 +260,9 @@ $(document).ready(function () {
         });     
         
         
-        //Share Bottom
+        // Share Bottom
 
-        //Bottom Share Fly-up    
+        // Bottom Share Fly-up    
         $('body').append('<div class="share-bottom-tap-close"></div>');
         $('.show-share-bottom, .show-share-box').click(function(){
             $('.share-bottom-tap-close').addClass('share-bottom-tap-close-active');
@@ -275,7 +275,7 @@ $(document).ready(function () {
             return false;
         });
 
-        //Set inputs to today's date by adding class set-day
+        // Set inputs to today's date by adding class set-day
         var set_input_now = new Date();
         var set_input_month = (set_input_now.getMonth() + 1);               
         var set_input_day = set_input_now.getDate();
@@ -286,13 +286,13 @@ $(document).ready(function () {
         var set_input_today = set_input_now.getFullYear() + '-' + set_input_month + '-' + set_input_day;
         $('.set-today').val(set_input_today);
 
-        //Countdown Timer
+        // Countdown Timer
         $(function() {$('.countdown-class').countdown({ date: "June 7, 2087 15:03:26"});});
 
-        //Copyright Year 
+        // Copyright Year 
         if ($("#copyright-year")[0]){document.getElementById('copyright-year').appendChild(document.createTextNode(new Date().getFullYear()))}        
   
-        //Contact Form
+        // Contact Form
         var formSubmitted = "false";
         jQuery(document).ready(function(e) {
             function t(t, n) {
@@ -378,7 +378,7 @@ $(document).ready(function () {
         });
         
         var scrolling_menu = new Swiper('.scrolling-menu', {
-            //scrollbar: '.swiper-scrollbar',
+            // scrollbar: '.swiper-scrollbar',
             scrollbarHide: true,
             freeMode:true,
             freeModeMomentum:true,
@@ -626,7 +626,7 @@ $(document).ready(function () {
         var swiper_store_slider2 = new Swiper('.store-slider-2', {autoplay:3000, loop:true});
         var swiper_text_slider = new Swiper('.text-slider',{autoplay:2000, loop:true});
         
-        //Aligning Elements & Resize Handlers//
+        // Aligning Elements & Resize Handlers//
         
         function center_content(){
             var screen_width = $(window).width();
@@ -688,7 +688,7 @@ $(document).ready(function () {
             calculate_lockscreen();
         });
             
-        //Fullscreen Map
+        // Fullscreen Map
         $('.map-text, .overlay').click(function(){
             $('.map-text, .map-fullscreen .overlay').addClass('hide-map'); 
             $('.deactivate-map').removeClass('hide-map'); 
@@ -700,14 +700,14 @@ $(document).ready(function () {
             return false;
         });
         
-        //Classic Toggles
+        // Classic Toggles
         $('.toggle-title').click(function(){
             $(this).parent().find('.toggle-content').slideToggle(250); 
             $(this).find('i').toggleClass('rotate-toggle');
             return false;
         });
         
-        //Checklist Item
+        // Checklist Item
         $('.checklist-item').click(function(){
            $(this).find('.ion-ios-circle-outline').toggle(250); 
            $(this).find('strong').toggleClass('completed-checklist');
@@ -720,7 +720,7 @@ $(document).ready(function () {
            $('.checklist-item-complete').find('.ion-checkmark, .ion-android-close, .ion-ios-checkmark-outline, .ion-checkmark-circled, .ion-close-circled, .ion-ios-close-outline').toggle(250); 
         }
         
-        //Tasklist Item
+        // Tasklist Item
         $('.tasklist-incomplete').click(function(){
            $(this).removeClass('tasklist-incomplete'); 
            $(this).addClass('tasklist-completed'); 
@@ -731,14 +731,14 @@ $(document).ready(function () {
             return false;
         });
         
-        //Interests
+        // Interests
         $('.interest-box').click(function(){
             $(this).toggleClass('transparent-background'); 
             $(this).find('.interest-first-icon, .interest-second-icon').toggleClass('hide-interest-icon');
             return false;
         });
         
-        //Loading Thumb Layout for News, 10 articles at a time
+        // Loading Thumb Layout for News, 10 articles at a time
         $(function(){
             $(".thumb-layout-page a").slice(0, 5).show(); // select the first ten
             $(".load-more-thumbs").click(function(e){ // click event for load more
@@ -772,7 +772,7 @@ $(document).ready(function () {
             });
         });
 
-        //News Tabs
+        // News Tabs
         $('.activate-tab-1').click(function(){
             $('#tab-2, #tab-3').slideUp(250); $('#tab-1').slideDown(250);
             $('.home-tabs a').removeClass('active-home-tab');
@@ -792,7 +792,7 @@ $(document).ready(function () {
             return false;
         });  
         
-        //Tabs
+        // Tabs
     	$('ul.tabs li').click(function(){
             var tab_id = $(this).attr('data-tab');
             
@@ -803,7 +803,7 @@ $(document).ready(function () {
             $("#"+tab_id).addClass('current');
         })
         
-        //Store Cart Add / Substract Numbers
+        // Store Cart Add / Substract Numbers
         $(function () {
             $('.add-qty').on('click',function(){
                 var $qty=$(this).closest('div').find('.qty');
@@ -828,9 +828,9 @@ $(document).ready(function () {
             return false;
         });
         
-        //Mobile UI Controls//
+        // Mobile UI Controls
         
-        //Dial Screen
+        // Dial Screen
         $('.phone-pad-1').click(function(){var this_value = $('.mobileui-dialpad input').val(); $('.mobileui-dialpad input').val(this_value + '1');});
         $('.phone-pad-2').click(function(){var this_value = $('.mobileui-dialpad input').val(); $('.mobileui-dialpad input').val(this_value + '2');});
         $('.phone-pad-3').click(function(){var this_value = $('.mobileui-dialpad input').val(); $('.mobileui-dialpad input').val(this_value + '3');});
@@ -852,7 +852,7 @@ $(document).ready(function () {
         });
         
         
-        //Lockscreen
+        // Lockscreen
         new Date($.now());
         var dt = new Date();
         var time = dt.getHours() + ":" + ("0" + dt.getMinutes()).substr(-2);;
@@ -877,10 +877,10 @@ $(document).ready(function () {
         calculate_lockscreen();
         
                 
-    }//Init Template Function
+    } //Init Template Function
 
     
-    setTimeout(init_template, 0);//Activating all the plugins
+    setTimeout(init_template, 0); //Activating all the plugins
     $(function(){
       'use strict';
       var options = {
@@ -937,7 +937,7 @@ $(document).ready(function () {
         },
 
         onAfter: function($container, $newContent) {
-            setTimeout(init_template, 0)//Timeout required to properly initiate all JS Functions. 
+            setTimeout(init_template, 0) //Timeout required to properly initiate all JS Functions. 
             $('.page-preloader').removeClass('show-preloader');
             setTimeout(function(){
                 $('#page-content, .header, .footer-menu-open').css({
